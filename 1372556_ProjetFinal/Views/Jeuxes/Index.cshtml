@@ -1,0 +1,54 @@
+﻿@model IEnumerable<_1372556_ProjetFinal.Models.Jeux>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomJeu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSortie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGenerationNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomJeu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateSortie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGenerationNavigation.IdGeneration)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdJeux">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdJeux">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdJeux">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
