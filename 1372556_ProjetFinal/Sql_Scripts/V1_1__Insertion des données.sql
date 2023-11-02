@@ -228,3 +228,81 @@ VALUES
 	(68, 2),  -- Brionne (Eau)
 	(69, 2),  -- Popplio (Eau)
 	(70, 4);  -- Kommo-o (Combat);
+
+
+-- Génération 2
+-- Pokemon de type Ténèbres
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Ténèbres') WHERE nom IN ('Tyranitar', 'Umbreon');
+
+-- Pokemon de type Acier
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Steelix', 'Scizor');
+
+-- Pokemon de type Dragon
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Dragon') WHERE nom IN ('Lugia', 'Ho-Oh');
+
+-- Ajoutez d'autres mises à jour pour les types correspondants de la génération 2
+
+-- Génération 3
+-- Pokemon de type Dragon
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Dragon') WHERE nom IN ('Salamence', 'Shelgon', 'Bagon');
+
+-- Pokemon de type Psy
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Psy') WHERE nom IN ('Gardevoir', 'Kirlia', 'Ralts');
+
+-- Pokemon de type Acier
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Aggron');
+
+-- Ajoutez d'autres mises à jour pour les types correspondants de la génération 3
+
+-- Génération 4
+-- Pokemon de type Feu
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Infernape', 'Monferno', 'Chimchar');
+
+-- Pokemon de type Eau
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Eau') WHERE nom IN ('Empoleon', 'Prinplup', 'Piplup');
+
+-- Pokemon de type Acier
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Magnezone', 'Magneton');
+
+-- Ajoutez d'autres mises à jour pour les types correspondants de la génération 4
+
+-- Génération 5
+-- Pokemon de type Ténèbres
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Ténèbres') WHERE nom IN ('Zoroark', 'Zorua');
+
+-- Pokemon de type Dragon
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Dragon') WHERE nom IN ('Hydreigon', 'Deino');
+
+-- Pokemon de type Feu
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Volcarona', 'Larvesta');
+
+-- Ajoutez d'autres mises à jour pour les types correspondants de la génération 5
+
+-- Génération 6
+-- Pokemon de type Eau
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Eau') WHERE nom IN ('Greninja', 'Frogadier', 'Froakie');
+
+-- Pokemon de type Feu
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Talonflame', 'Fletchinder', 'Fletchling');
+
+-- Pokemon de type Acier
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Aegislash', 'Doublade', 'Honedge');
+
+-- Ajoutez d'autres mises à jour pour les types correspondants de la génération 6
+
+-- Génération 7
+-- Pokemon de type Feu
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Incineroar', 'Torracat', 'Litten');
+
+-- Pokemon de type Plante
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Plante') WHERE nom IN ('Decidueye', 'Dartrix', 'Rowlet');
+
+-- Pokemon de type Eau
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Eau') WHERE nom IN ('Primarina', 'Brionne', 'Popplio');
+
+-- Pokemon de type Combat
+UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Combat') WHERE nom IN ('Kommo-o');
+
+-- Ajoutez d'autres mises à jour pour les types correspondants de la génération 7
+
+-- Continuez ce modèle pour les générations ultérieures en ajoutant les types correspondants à chaque Pokémon de chaque génération.

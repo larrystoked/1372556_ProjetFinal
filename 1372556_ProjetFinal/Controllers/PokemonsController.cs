@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _1372556_ProjetFinal.Data;
 using _1372556_ProjetFinal.Models;
+using _1372556_ProjetFinal.ViewModels;
 
 namespace _1372556_ProjetFinal.Controllers
 {
@@ -25,6 +26,38 @@ namespace _1372556_ProjetFinal.Controllers
             var tP1_PokemonContext = _context.Pokemons.Include(p => p.IdGenerationNavigation);
             return View(await tP1_PokemonContext.ToListAsync());
         }
+
+
+        // GET: Pokemons/IndexAll
+        [Route("pokemons")]
+        public IActionResult IndexAll()
+        {
+            var allPokemon = _context.Pokemons
+                .Include(p => p.IdTypes) // Inclure les informations de type
+                .Include(p => p.IdDresseurs) // Inclure les informations de dresseur
+                .ToList();
+
+            var viewModelList = new List<PokemonViewModel>();
+
+            foreach (var pokemon in allPokemon)
+            {
+                var viewModel = new PokemonViewModel
+                {
+                    IdPokemon = pokemon.IdPokemon,
+                    Nom = pokemon.Nom,
+                    Niveau = pokemon.Niveau,
+                    IdGeneration = pokemon.IdGeneration,
+                    NiveauParDefaut = pokemon.NiveauParDefaut,
+                    Types = pokemon.IdTypes.ToList(), // Remplir les informations de type
+                    Dresseurs = pokemon.IdDresseurs.ToList() // Remplir les informations de dresseur
+                };
+
+                viewModelList.Add(viewModel);
+            }
+
+            return View(viewModelList);
+        }
+
 
         // GET: Pokemons/Details/5
         public async Task<IActionResult> Details(int? id)
