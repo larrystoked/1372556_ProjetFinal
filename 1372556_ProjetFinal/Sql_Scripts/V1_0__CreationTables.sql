@@ -42,5 +42,6 @@ CREATE TABLE Jeux (
     dateSortie DATE,
     age INT,
     idGeneration INT,
+    Prix INT,
     CONSTRAINT fk_Generation_jeux FOREIGN KEY (idGeneration) REFERENCES Generation(idGeneration)
 );

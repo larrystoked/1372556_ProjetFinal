@@ -13,7 +13,7 @@ namespace _1372556_ProjetFinal.Models
         public int? Age { get; set; }
         public int? IdGeneration { get; set; }
         public string NomGeneration { get; set; }
-
+        public int Prix { get; set; }
     }
 
 }

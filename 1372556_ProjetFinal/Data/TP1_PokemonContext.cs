@@ -27,6 +27,16 @@ namespace _1372556_ProjetFinal.Data
         public virtual DbSet<JeuxComplexViewModel> JeuxComplexs { get; set; } = null!;
         public virtual DbSet<VwListeJeux> ListeJeux { get; set; } = null!;
 
+        public void ChiffrerPrixJeux(int idJeux)
+        {
+            Database.ExecuteSqlRaw("EXEC ChiffrerPrixJeux @IdJeux", idJeux);
+        }
+
+        public void DechiffrerPrixJeux(int idJeux)
+        {
+            Database.ExecuteSqlRaw("EXEC DechiffrerPrixJeux @IdJeux", idJeux);
+        }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

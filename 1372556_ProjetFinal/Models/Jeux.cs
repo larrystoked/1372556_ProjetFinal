@@ -23,6 +23,9 @@ namespace _1372556_ProjetFinal.Models
         [Column("idGeneration")]
         public int? IdGeneration { get; set; }
 
+        [Column("Prix")]
+        public int? Prix { get; set; }
+
         [ForeignKey("IdGeneration")]
         [InverseProperty("Jeuxes")]
         public virtual Generation? IdGenerationNavigation { get; set; }

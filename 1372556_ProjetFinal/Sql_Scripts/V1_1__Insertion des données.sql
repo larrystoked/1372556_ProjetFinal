@@ -23,20 +23,20 @@ INSERT INTO Dresseur (nom, prenom, badgeCount) VALUES
 ('Elio', 'Sun', 8), ('Selene', 'Moon', 6);
 
 -- Ajout des enregistrements dans la table Jeux (Ajout de jeux)
-INSERT INTO Jeux (nomJeu, dateSortie, age, idGeneration) VALUES 
-('Pokémon Rouge', '1996-02-27', 25, 1), ('Pokémon Bleu', '1996-02-27', 25, 1), 
-('Pokémon Jaune', '1998-09-12', 23, 1), ('Pokémon Or', '2000-10-15', 21, 2), 
-('Pokémon Argent', '2000-10-15', 21, 2), ('Pokémon Cristal', '2001-07-29', 20, 2), 
-('Pokémon Rubis', '2002-11-21', 19, 3), ('Pokémon Saphir', '2002-11-21', 19, 3), 
-('Pokémon Émeraude', '2004-09-09', 17, 3), ('Pokémon Diamant', '2006-04-22', 15, 4), 
-('Pokémon Perle', '2006-04-22', 15, 4), ('Pokémon Platine', '2008-09-13', 13, 4), 
-('Pokémon Noir', '2010-03-06', 11, 5), ('Pokémon Blanc', '2010-03-06', 11, 5), 
-('Pokémon Noir 2', '2012-06-23', 9, 5), ('Pokémon Blanc 2', '2012-06-23', 9, 5), 
-('Pokémon X', '2013-10-12', 8, 6), ('Pokémon Y', '2013-10-12', 8, 6), 
-('Pokémon Rubis Oméga', '2014-11-21', 7, 6), ('Pokémon Saphir Alpha', '2014-11-21', 7, 6), 
-('Pokémon Soleil', '2016-11-18', 5, 7), ('Pokémon Lune', '2016-11-18', 5, 7), 
-('Pokémon Ultra-Soleil', '2017-11-17', 4, 7), ('Pokémon Ultra-Lune', '2017-11-17', 4, 7), 
-('Pokémon Épée', '2019-11-15', 2, 8), ('Pokémon Bouclier', '2019-11-15', 2, 8);
+INSERT INTO Jeux (nomJeu, dateSortie, age, idGeneration, Prix) VALUES 
+('Pokémon Rouge', '1996-02-27', 25, 1, 60), ('Pokémon Bleu', '1996-02-27', 25, 1, 70), 
+('Pokémon Jaune', '1998-09-12', 23, 1, 60), ('Pokémon Or', '2000-10-15', 21, 2, 70), 
+('Pokémon Argent', '2000-10-15', 21, 2, 60), ('Pokémon Cristal', '2001-07-29', 20, 2, 70), 
+('Pokémon Rubis', '2002-11-21', 19, 3, 60), ('Pokémon Saphir', '2002-11-21', 19, 3, 70), 
+('Pokémon Émeraude', '2004-09-09', 17, 3, 60), ('Pokémon Diamant', '2006-04-22', 15, 4, 70), 
+('Pokémon Perle', '2006-04-22', 15, 4, 60), ('Pokémon Platine', '2008-09-13', 13, 4, 70), 
+('Pokémon Noir', '2010-03-06', 11, 5, 60), ('Pokémon Blanc', '2010-03-06', 11, 5, 70), 
+('Pokémon Noir 2', '2012-06-23', 9, 5, 60), ('Pokémon Blanc 2', '2012-06-23', 9, 5, 70), 
+('Pokémon X', '2013-10-12', 8, 6, 60), ('Pokémon Y', '2013-10-12', 8, 6, 70), 
+('Pokémon Rubis Oméga', '2014-11-21', 7, 6, 60), ('Pokémon Saphir Alpha', '2014-11-21', 7, 6, 70), 
+('Pokémon Soleil', '2016-11-18', 5, 7, 60), ('Pokémon Lune', '2016-11-18', 5, 7, 60), 
+('Pokémon Ultra-Soleil', '2017-11-17', 4, 7, 60), ('Pokémon Ultra-Lune', '2017-11-17', 4, 7, 60), 
+('Pokémon Épée', '2019-11-15', 2, 8, 60), ('Pokémon Bouclier', '2019-11-15', 2, 8, 60);
 
 -- Ajout des enregistrements dans la table Pokemon
 -- Génération 1
@@ -129,180 +129,3 @@ INSERT INTO Pokemon (nom, niveau, idGeneration) VALUES
 	('Brionne', 17, 7),
 	('Popplio', 5, 7),
 	('Kommo-o', 55, 7);
-
--- Ajout des enregistrements dans la table PokemonType pour les types de Pokémon
--- Vous pouvez ajouter ces enregistrements selon les types de Pokémon que vous souhaitez
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(1, 1),   -- Charizard de type Feu
-	(2, 1),   -- Charmeleon de type Feu
-	(3, 1),   -- Charmander de type Feu
-	(4, 8),   -- Gengar de type Spectre
-	(5, 8),   -- Haunter de type Spectre
-	(6, 8),   -- Gastly de type Spectre
-	(7, 2),   -- Gyarados de type Eau
-	(8, 2),   -- Magikarp de type Eau
-	(9, 11),  -- Alakazam de type Psy
-	(10, 11) -- Kadabra de type Psy
-	-- Continuez d'associer les types aux Pokémon correspondants ;
-	-- Génération 2
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(11, 1),  -- Tyranitar (Roche)
-	(12, 1),  -- Pupitar (Roche)
-	(13, 1),  -- Larvitar (Roche)
-	(14, 8),  -- Lugia (Spectre)
-	(15, 8),  -- Ho-Oh (Spectre)
-	(16, 11), -- Espeon (Psy)
-	(17, 11), -- Eevee (Psy)
-	(18, 8),  -- Umbreon (Spectre)
-	(19, 6),  -- Steelix (Acier)
-	(20, 9);  -- Scizor (Insecte)
-
--- Génération 3
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(21, 3),  -- Salamence (Feu)
-	(22, 3),  -- Shelgon (Feu)
-	(23, 3),  -- Bagon (Feu)
-	(24, 6),  -- Metagross (Acier)
-	(25, 6),  -- Metang (Acier)
-	(26, 6),  -- Beldum (Acier)
-	(27, 11), -- Gardevoir (Psy)
-	(28, 11), -- Kirlia (Psy)
-	(29, 11), -- Ralts (Psy)
-	(30, 9);  -- Aggron (Insecte)
-
--- Génération 4
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(31, 3),  -- Infernape (Feu)
-	(32, 3),  -- Monferno (Feu)
-	(33, 3),  -- Chimchar (Feu)
-	(34, 6),  -- Empoleon (Acier)
-	(35, 6),  -- Prinplup (Acier)
-	(36, 6),  -- Piplup (Acier)
-	(37, 4),  -- Lucario (Combat)
-	(38, 4),  -- Riolu (Combat)
-	(39, 6),  -- Magnezone (Acier)
-	(40, 6);  -- Magneton (Acier)
-
--- Génération 5
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(41, 15), -- Zoroark (Ténèbres)
-	(42, 15), -- Zorua (Ténèbres)
-	(43, 15), -- Hydreigon (Ténèbres)
-	(44, 10), -- Deino (Combat)
-	(45, 9),  -- Volcarona (Insecte)
-	(46, 9),  -- Larvesta (Insecte)
-	(47, 4),  -- Haxorus (Combat)
-	(48, 4),  -- Fraxure (Combat)
-	(49, 4),  -- Axew (Combat)
-	(50, 14); -- Golurk (Psy)
-
--- Génération 6
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(51, 16), -- Greninja (Dragon)
-	(52, 16), -- Frogadier (Dragon)
-	(53, 16), -- Froakie (Dragon)
-	(54, 3),  -- Talonflame (Feu)
-	(55, 3),  -- Fletchinder (Feu)
-	(56, 3),  -- Fletchling (Feu)
-	(57, 6),  -- Aegislash (Acier)
-	(58, 6),  -- Doublade (Acier)
-	(59, 6),  -- Honedge (Acier)
-	(60, 15); -- Dragapult (Ténèbres)
-
--- Génération 7
-INSERT INTO PokemonType (idPokemon, idType)
-VALUES
-	(61, 3),  -- Incineroar (Feu)
-	(62, 3),  -- Torracat (Feu)
-	(63, 3),  -- Litten (Feu)
-	(64, 5),  -- Decidueye (Plante)
-	(65, 5),  -- Dartrix (Plante)
-	(66, 5),  -- Rowlet (Plante)
-	(67, 2),  -- Primarina (Eau)
-	(68, 2),  -- Brionne (Eau)
-	(69, 2),  -- Popplio (Eau)
-	(70, 4);  -- Kommo-o (Combat);
-
-
--- Génération 2
--- Pokemon de type Ténèbres
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Ténèbres') WHERE nom IN ('Tyranitar', 'Umbreon');
-
--- Pokemon de type Acier
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Steelix', 'Scizor');
-
--- Pokemon de type Dragon
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Dragon') WHERE nom IN ('Lugia', 'Ho-Oh');
-
--- Ajoutez d'autres mises à jour pour les types correspondants de la génération 2
-
--- Génération 3
--- Pokemon de type Dragon
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Dragon') WHERE nom IN ('Salamence', 'Shelgon', 'Bagon');
-
--- Pokemon de type Psy
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Psy') WHERE nom IN ('Gardevoir', 'Kirlia', 'Ralts');
-
--- Pokemon de type Acier
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Aggron');
-
--- Ajoutez d'autres mises à jour pour les types correspondants de la génération 3
-
--- Génération 4
--- Pokemon de type Feu
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Infernape', 'Monferno', 'Chimchar');
-
--- Pokemon de type Eau
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Eau') WHERE nom IN ('Empoleon', 'Prinplup', 'Piplup');
-
--- Pokemon de type Acier
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Magnezone', 'Magneton');
-
--- Ajoutez d'autres mises à jour pour les types correspondants de la génération 4
-
--- Génération 5
--- Pokemon de type Ténèbres
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Ténèbres') WHERE nom IN ('Zoroark', 'Zorua');
-
--- Pokemon de type Dragon
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Dragon') WHERE nom IN ('Hydreigon', 'Deino');
-
--- Pokemon de type Feu
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Volcarona', 'Larvesta');
-
--- Ajoutez d'autres mises à jour pour les types correspondants de la génération 5
-
--- Génération 6
--- Pokemon de type Eau
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Eau') WHERE nom IN ('Greninja', 'Frogadier', 'Froakie');
-
--- Pokemon de type Feu
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Talonflame', 'Fletchinder', 'Fletchling');
-
--- Pokemon de type Acier
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Acier') WHERE nom IN ('Aegislash', 'Doublade', 'Honedge');
-
--- Ajoutez d'autres mises à jour pour les types correspondants de la génération 6
-
--- Génération 7
--- Pokemon de type Feu
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Feu') WHERE nom IN ('Incineroar', 'Torracat', 'Litten');
-
--- Pokemon de type Plante
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Plante') WHERE nom IN ('Decidueye', 'Dartrix', 'Rowlet');
-
--- Pokemon de type Eau
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Eau') WHERE nom IN ('Primarina', 'Brionne', 'Popplio');
-
--- Pokemon de type Combat
-UPDATE Pokemon SET idType = (SELECT idType FROM Type WHERE nomType = 'Combat') WHERE nom IN ('Kommo-o');
-
--- Ajoutez d'autres mises à jour pour les types correspondants de la génération 7
-
--- Continuez ce modèle pour les générations ultérieures en ajoutant les types correspondants à chaque Pokémon de chaque génération.

@@ -194,5 +194,27 @@ namespace _1372556_ProjetFinal.Controllers
         {
           return (_context.Jeuxes?.Any(e => e.IdJeux == id)).GetValueOrDefault();
         }
+
+        //Chiffrer
+        public IActionResult ChiffrerPrixDuJeu(int id)
+        {
+            
+            _context.ChiffrerPrixJeux(id);
+
+            
+
+            return RedirectToAction("Index"); 
+        }
+
+        //Dechiffrer
+        public IActionResult DechiffrerPrix(int id)
+        {
+            _context.DechiffrerPrixJeux(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
+
     }
 }

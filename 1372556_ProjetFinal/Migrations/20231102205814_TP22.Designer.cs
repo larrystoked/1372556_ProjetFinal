@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1372556_ProjetFinal.Data;
 
@@ -11,9 +12,10 @@ using _1372556_ProjetFinal.Data;
 namespace _1372556_ProjetFinal.Migrations
 {
     [DbContext(typeof(TP1_PokemonContext))]
-    partial class TP1_PokemonContextModelSnapshot : ModelSnapshot
+    [Migration("20231102205814_TP22")]
+    partial class TP22
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
