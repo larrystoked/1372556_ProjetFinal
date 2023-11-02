@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using _1372556_ProjetFinal.Models;
 using _1372556_ProjetFinal.ViewModels;
 using _1372556_ProjetFinal.ViewModel;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
 
 namespace _1372556_ProjetFinal.Data
 {
@@ -36,6 +39,18 @@ namespace _1372556_ProjetFinal.Data
         {
             Database.ExecuteSqlRaw("EXEC DechiffrerPrixJeux @IdJeux", idJeux);
         }
+
+        public IEnumerable<Jeux> ExecuteGetGameDetails(int gameId)
+        {
+            var gameIdParameter = new SqlParameter("@IdJeux", gameId);
+
+            return this.Set<Jeux>().FromSqlRaw("EXEC GetGameDetails @IdJeux", gameIdParameter).ToList();
+        }
+
+
+
+
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

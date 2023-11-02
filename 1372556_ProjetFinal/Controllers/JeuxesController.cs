@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using _1372556_ProjetFinal.Data;
 using _1372556_ProjetFinal.Models;
 using _1372556_ProjetFinal.ViewModel;
+using Microsoft.Data.SqlClient;
 
 namespace _1372556_ProjetFinal.Controllers
 {
@@ -212,6 +213,23 @@ namespace _1372556_ProjetFinal.Controllers
             _context.DechiffrerPrixJeux(id);
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult GetGameDetails(int gameId)
+        {
+            var gameDetails = _context.ExecuteGetGameDetails(gameId);
+
+            if (gameDetails != null && gameDetails.Any())
+            {
+                // Gérez les détails du jeu comme nécessaire
+                return View(gameDetails.First()); // Si vous avez plusieurs détails, vous devrez adapter votre vue pour les afficher correctement
+            }
+            else
+            {
+                // Gérez le cas où aucun détail de jeu n'a été trouvé
+                return NotFound();
+            }
+        }
+
 
 
 
