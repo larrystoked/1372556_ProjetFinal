@@ -31,7 +31,7 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller}/{action}/{id}"
         );
-    endpoints.MapFallbackToController("Index", "Pokemons");
+    endpoints.MapFallbackToController("IndexComplex", "Jeuxes");
 }); 
 
 app.MapRazorPages();

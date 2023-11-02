@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using _1372556_ProjetFinal.Models;
+using _1372556_ProjetFinal.ViewModels;
+using _1372556_ProjetFinal.ViewModel;
 
 namespace _1372556_ProjetFinal.Data
 {
@@ -22,6 +24,9 @@ namespace _1372556_ProjetFinal.Data
         public virtual DbSet<Jeux> Jeuxes { get; set; } = null!;
         public virtual DbSet<Pokemon> Pokemons { get; set; } = null!;
         public virtual DbSet<Types> Types { get; set; } = null!;
+        public virtual DbSet<JeuxComplexViewModel> JeuxComplexs { get; set; } = null!;
+        public virtual DbSet<VwListeJeux> ListeJeux { get; set; } = null!;
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,6 +38,8 @@ namespace _1372556_ProjetFinal.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<JeuxComplexViewModel>().HasNoKey();
+
             modelBuilder.Entity<Dresseur>(entity =>
             {
                 entity.HasKey(e => e.IdDresseur)

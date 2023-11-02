@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _1372556_ProjetFinal.Data;
 using _1372556_ProjetFinal.Models;
+using _1372556_ProjetFinal.ViewModel;
 
 namespace _1372556_ProjetFinal.Controllers
 {
@@ -25,6 +26,35 @@ namespace _1372556_ProjetFinal.Controllers
             var tP1_PokemonContext = _context.Jeuxes.Include(j => j.IdGenerationNavigation);
             return View(await tP1_PokemonContext.ToListAsync());
         }
+
+        //VUE COMPLEXE
+
+        public IActionResult IndexComplex()
+        {
+            var cutoffYear = 2010; // Année limite de filtrage
+            var jeuxComplex = _context.JeuxComplexs
+                            .Where(jeux => jeux.DateSortie.HasValue && jeux.DateSortie.Value.Year < cutoffYear)
+                .ToList();
+
+            var viewModel = new VwListeJeux
+            {
+                JeuxComplexList = jeuxComplex.Select(jeux => new JeuxComplexViewModel
+                {
+                    IdJeux = jeux.IdJeux,
+                    NomJeu = jeux.NomJeu,
+                    DateSortie = jeux.DateSortie,
+                    Age = jeux.Age,
+                    IdGeneration = jeux.IdGeneration,
+                    NomGeneration = jeux.NomGeneration
+                }).ToList()
+            };
+
+            return View(viewModel);
+        }
+
+
+
+
 
         // GET: Jeuxes/Details/5
         public async Task<IActionResult> Details(int? id)

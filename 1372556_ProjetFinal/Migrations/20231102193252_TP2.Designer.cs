@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1372556_ProjetFinal.Data;
 
@@ -11,9 +12,10 @@ using _1372556_ProjetFinal.Data;
 namespace _1372556_ProjetFinal.Migrations
 {
     [DbContext(typeof(TP1_PokemonContext))]
-    partial class TP1_PokemonContextModelSnapshot : ModelSnapshot
+    [Migration("20231102193252_TP2")]
+    partial class TP2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,31 +184,6 @@ namespace _1372556_ProjetFinal.Migrations
                         .IsUnique();
 
                     b.ToTable("Type");
-                });
-
-            modelBuilder.Entity("_1372556_ProjetFinal.ViewModel.JeuxComplexViewModel", b =>
-                {
-                    b.Property<int?>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DateSortie")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("IdGeneration")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdJeux")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NomGeneration")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NomJeu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("JeuxComplexs");
                 });
 
             modelBuilder.Entity("DresseurPokemon", b =>
