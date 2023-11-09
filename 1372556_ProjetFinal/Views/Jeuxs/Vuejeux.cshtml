@@ -1,0 +1,30 @@
+﻿@model List<_1372556_ProjetFinal.Models.VueJeux> 
+
+<h2>Vue Personnalisée</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom du Jeu</th>
+            <th>Date de Sortie</th>
+            <th>Age</th>
+            <th>Nom de la Génération</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NomJeu</td>
+                <td>
+                    @if (item.DateSortie.HasValue)
+                    {
+                        @item.DateSortie.Value.ToShortDateString()
+                    }
+                </td>
+                <td>@item.Age</td>
+                <td>@item.Nom</td>
+            </tr>
+        }
+    </tbody>
+</table>

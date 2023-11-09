@@ -1,11 +1,12 @@
-USE TP1_Pokemon;
-GO
-
-CREATE PROCEDURE GetGameDetails
-    @IdJeux INT
+CREATE PROCEDURE dbo.GetPokemonDetailsByGeneration
+    @GenerationId INT
 AS
 BEGIN
-    SELECT *
-    FROM Jeux
-    WHERE IdJeux = @IdJeux;
+    -- Votre logique pour la procédure stockée ici
+    SELECT P.Nom AS PokemonNom, P.Niveau, G.Nom AS GenerationNom
+    FROM Pokemon P
+    INNER JOIN Generation G ON P.IdGeneration = G.IdGeneration
+    WHERE P.IdGeneration = @GenerationId;
 END
+GO
+

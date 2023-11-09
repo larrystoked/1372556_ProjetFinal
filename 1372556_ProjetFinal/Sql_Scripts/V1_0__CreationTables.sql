@@ -2,10 +2,10 @@
 USE TP1_Pokemon;
 GO
 
--- Création de la table Type
-CREATE TABLE Type (
-    idType INT IDENTITY(1,1) PRIMARY KEY,
-    nomType VARCHAR(255) NOT NULL UNIQUE
+-- Création de la table 
+CREATE TABLE Typee (
+    idTypes INT IDENTITY(1,1) PRIMARY KEY,
+    nomTypes VARCHAR(255) NOT NULL UNIQUE
 );
 
 -- Création de la table Generation
@@ -23,8 +23,8 @@ CREATE TABLE Pokemon (
     niveau INT CHECK (niveau >= 0),
     idGeneration INT,
     CONSTRAINT fk_Generation FOREIGN KEY (idGeneration) REFERENCES Generation(idGeneration),
-    idType INT,
-    CONSTRAINT fk_Types FOREIGN KEY (idType) REFERENCES Type(idType)
+    idTypes INT,
+    CONSTRAINT fk_Types FOREIGN KEY (idTypes) REFERENCES Typee(idTypes)
 );
 
 -- Création de la table Dresseur

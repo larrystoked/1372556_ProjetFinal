@@ -3,7 +3,7 @@ USE TP1_Pokemon;
 GO
 
 -- Ajout des enregistrements dans la table Type
-INSERT INTO Type (nomType) VALUES 
+INSERT INTO Typee (nomTypes) VALUES 
 ('Feu'), ('Eau'), ('Plante'), ('Électrique'), ('Ténèbres'), ('Acier'), ('Spectre'), 
 ('Vol'), ('Dragon'), ('Combat'), ('Psy'), ('Poison'), ('Fée');
 

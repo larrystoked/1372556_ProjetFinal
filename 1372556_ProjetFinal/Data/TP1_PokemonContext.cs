@@ -4,10 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using _1372556_ProjetFinal.Models;
 using _1372556_ProjetFinal.ViewModels;
-using _1372556_ProjetFinal.ViewModel;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore.SqlServer;
-
 
 namespace _1372556_ProjetFinal.Data
 {
@@ -22,36 +18,21 @@ namespace _1372556_ProjetFinal.Data
         {
         }
 
+        public virtual DbSet<Changelog> Changelogs { get; set; } = null!;
         public virtual DbSet<Dresseur> Dresseurs { get; set; } = null!;
         public virtual DbSet<Generation> Generations { get; set; } = null!;
         public virtual DbSet<Jeux> Jeuxes { get; set; } = null!;
         public virtual DbSet<Pokemon> Pokemons { get; set; } = null!;
-        public virtual DbSet<Types> Types { get; set; } = null!;
-        public virtual DbSet<JeuxComplexViewModel> JeuxComplexs { get; set; } = null!;
-        public virtual DbSet<VwListeJeux> ListeJeux { get; set; } = null!;
+        public virtual DbSet<Typee> Typees { get; set; } = null!;
+        public virtual DbSet<VueJeux> VueJeuxes { get; set; } = null!;
+        public virtual DbSet<PokemonDetailsResult> PokemonDetailsResult { get; set; }
 
-        public void ChiffrerPrixJeux(int idJeux)
+        public virtual async Task<List<PokemonDetailsResult>> GetPokemonDetailsByGenerationAsync(int generationId)
         {
-            Database.ExecuteSqlRaw("EXEC ChiffrerPrixJeux @IdJeux", idJeux);
+            return await PokemonDetailsResult
+                .FromSqlInterpolated($"EXEC dbo.GetPokemonDetailsByGeneration {generationId}")
+                .ToListAsync();
         }
-
-        public void DechiffrerPrixJeux(int idJeux)
-        {
-            Database.ExecuteSqlRaw("EXEC DechiffrerPrixJeux @IdJeux", idJeux);
-        }
-
-        public IEnumerable<Jeux> ExecuteGetGameDetails(int gameId)
-        {
-            var gameIdParameter = new SqlParameter("@IdJeux", gameId);
-
-            return this.Set<Jeux>().FromSqlRaw("EXEC GetGameDetails @IdJeux", gameIdParameter).ToList();
-        }
-
-
-
-
-
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -63,24 +44,27 @@ namespace _1372556_ProjetFinal.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<JeuxComplexViewModel>().HasNoKey();
+            modelBuilder.Entity<Changelog>(entity =>
+            {
+                entity.Property(e => e.InstalledOn).HasDefaultValueSql("(getdate())");
+            });
 
             modelBuilder.Entity<Dresseur>(entity =>
             {
                 entity.HasKey(e => e.IdDresseur)
-                    .HasName("PK__Dresseur__A18A258796FF75EA");
+                    .HasName("PK__Dresseur__A18A2587B391153F");
             });
 
             modelBuilder.Entity<Generation>(entity =>
             {
                 entity.HasKey(e => e.IdGeneration)
-                    .HasName("PK__Generati__B9B517B5C22F9B78");
+                    .HasName("PK__Generati__B9B517B545F6F3AA");
             });
 
             modelBuilder.Entity<Jeux>(entity =>
             {
                 entity.HasKey(e => e.IdJeux)
-                    .HasName("PK__Jeux__1087CF56308CDE1D");
+                    .HasName("PK__Jeux__1087CF5651129398");
 
                 entity.HasOne(d => d.IdGenerationNavigation)
                     .WithMany(p => p.Jeuxes)
@@ -91,54 +75,28 @@ namespace _1372556_ProjetFinal.Data
             modelBuilder.Entity<Pokemon>(entity =>
             {
                 entity.HasKey(e => e.IdPokemon)
-                    .HasName("PK__Pokemon__653EBD85BAB59545");
-
-                entity.Property(e => e.NiveauParDefaut).HasDefaultValueSql("((0))");
+                    .HasName("PK__Pokemon__653EBD859FBC7C17");
 
                 entity.HasOne(d => d.IdGenerationNavigation)
                     .WithMany(p => p.Pokemons)
                     .HasForeignKey(d => d.IdGeneration)
                     .HasConstraintName("fk_Generation");
 
-                entity.HasMany(d => d.IdDresseurs)
-                    .WithMany(p => p.IdPokemons)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "PokemonDresseur",
-                        l => l.HasOne<Dresseur>().WithMany().HasForeignKey("IdDresseur").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("fk_Dresseur"),
-                        r => r.HasOne<Pokemon>().WithMany().HasForeignKey("IdPokemon").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("fk_Pokemon"),
-                        j =>
-                        {
-                            j.HasKey("IdPokemon", "IdDresseur").HasName("PK__Pokemon___0F261FDD8599F6D7");
-
-                            j.ToTable("Pokemon_Dresseur");
-
-                            j.IndexerProperty<int>("IdPokemon").HasColumnName("idPokemon");
-
-                            j.IndexerProperty<int>("IdDresseur").HasColumnName("idDresseur");
-                        });
-
-                entity.HasMany(d => d.IdTypes)
-                    .WithMany(p => p.IdPokemons)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "PokemonTypes",
-                        l => l.HasOne<Types>().WithMany().HasForeignKey("IdTypes").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("fk_Type"),
-                        r => r.HasOne<Pokemon>().WithMany().HasForeignKey("IdPokemon").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("fk_Pokemon_type"),
-                        j =>
-                        {
-                            j.HasKey("IdPokemon", "IdTypes").HasName("PK__PokemonT__1185253979228652");
-
-                            j.ToTable("PokemonTypes");
-
-                            j.IndexerProperty<int>("IdPokemon").HasColumnName("idPokemon");
-
-                            j.IndexerProperty<int>("IdTypes").HasColumnName("idTypes");
-                        });
+                entity.HasOne(d => d.IdTypesNavigation)
+                    .WithMany(p => p.Pokemons)
+                    .HasForeignKey(d => d.IdTypes)
+                    .HasConstraintName("fk_Types");
             });
 
-            modelBuilder.Entity<Types>(entity =>
+            modelBuilder.Entity<Typee>(entity =>
             {
                 entity.HasKey(e => e.IdTypes)
-                    .HasName("PK__Type__4BB98BC6ED3EF932");
+                    .HasName("PK__Typee__1DC79F8242D6BB18");
+            });
+
+            modelBuilder.Entity<VueJeux>(entity =>
+            {
+                entity.ToView("VueJeux");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -16,122 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\1372556\Desktop\1372556_ProjetFinal\1372556_ProjetFinal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Dresseurs/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJlc3NldXJzXENyZWF0ZS5jc2h0bWw=
+[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Dresseurs/DetailsDecrypted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJlc3NldXJzXERldGFpbHNEZWNyeXB0ZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Dresseurs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJlc3NldXJzXERlbGV0ZS5jc2h0bWw=
+[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Dresseurs/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJlc3NldXJzXERldGFpbHMuY3NodG1s
+[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxs/Vuejeux.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eHNcVnVlamV1eC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Dresseurs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJlc3NldXJzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Dresseurs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJlc3NldXJzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Generations/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Generations/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGlvbnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Generations/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGlvbnNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Generations/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGlvbnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Generations/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGlvbnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eGVzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eGVzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eGVzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eGVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eGVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Jeuxes/IndexComplex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV1eGVzXEluZGV4Q29tcGxleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemons/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemons/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemons/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemons/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemons/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemons/IndexAll.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcSW5kZXhBbGwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Types/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Types/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Types/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Types/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Types/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/1372556/Desktop/1372556_ProjetFinal/1372556_ProjetFinal/Views/Pokemon/GetPokemonDetailsByGeneration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblxHZXRQb2tlbW9uRGV0YWlsc0J5R2VuZXJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

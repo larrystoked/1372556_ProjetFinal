@@ -9,11 +9,6 @@ namespace _1372556_ProjetFinal.Models
     [Table("Dresseur")]
     public partial class Dresseur
     {
-        public Dresseur()
-        {
-            IdPokemons = new HashSet<Pokemon>();
-        }
-
         [Key]
         [Column("idDresseur")]
         public int IdDresseur { get; set; }
@@ -27,9 +22,5 @@ namespace _1372556_ProjetFinal.Models
         public string Prenom { get; set; } = null!;
         [Column("badgeCount")]
         public int? BadgeCount { get; set; }
-
-        [ForeignKey("IdDresseur")]
-        [InverseProperty("IdDresseurs")]
-        public virtual ICollection<Pokemon> IdPokemons { get; set; }
     }
 }

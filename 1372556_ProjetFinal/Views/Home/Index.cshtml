@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Home</h2>
+
+<div>
+    <h4>Actions</h4>
+    <button type="button" onclick="location.href='@Url.Action("RedirectVueJeux", "Home")'">Redirection vers VueJeux</button>
+    <button type="button" onclick="location.href='@Url.Action("RedirectToDetailsDecrypted", "Home", new { id = 1 })'">Redirection vers DetailsDecrypted</button>
+    <button type="button" onclick="location.href='@Url.Action("GetPokemonDetailsByGeneration", "Pokemon")'">Redirection vers GetPokemonDetailsByGeneration</button>
+</div>

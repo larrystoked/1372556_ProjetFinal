@@ -1,0 +1,60 @@
+﻿@using _1372556_ProjetFinal.Models
+
+<style>
+    /* pokemon-theme.css */
+
+    body {
+        background-color: #f2f2f2;
+        font-family: 'Arial', sans-serif;
+    }
+
+    h2 {
+        color: #ff0000; /* Rouge */
+    }
+
+    /* Ajoutez d'autres styles pour les formulaires, tableaux, etc. */
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .table th, .table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+    /* ... Ajoutez d'autres styles si nécessaire ... */
+</style>
+
+
+
+<h2>Pokemon par Génération</h2>
+
+<form asp-controller="Pokemon" asp-action="GetPokemonDetailsByGeneration" method="post">
+    <label for="generationId"># de Génération:</label>
+    <input type="text" name="generationId" />
+    <button type="submit">Obtenir les détails</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Pokemon Name</th>
+            <th>Level</th>
+            <th>Generation Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pokemonDetail in Model)
+        {
+            <tr>
+                <td>@pokemonDetail.PokemonNom</td>
+                <td>@pokemonDetail.Niveau</td>
+                <td>@pokemonDetail.GenerationNom</td>
+            </tr>
+        }
+    </tbody>
+</table>

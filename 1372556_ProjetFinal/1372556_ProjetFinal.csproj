@@ -24,8 +24,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="6.0.16" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Sql_Scripts\" />
-  </ItemGroup>
-
 </Project>

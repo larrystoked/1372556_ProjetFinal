@@ -1,11 +1,14 @@
+//using _1372556_ProjetFinal.Data;
 using _1372556_ProjetFinal.Data;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Ajouter la configuration du routage
 builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<TP1_PokemonContext>(options =>
 {
@@ -14,25 +17,28 @@ builder.Services.AddDbContext<TP1_PokemonContext>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurer le pipeline de requêtes HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller}/{action}/{id}"
-        );
-    endpoints.MapFallbackToController("IndexComplex", "Jeuxes");
-}); 
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    endpoints.MapControllerRoute(
+        name: "customRoute",
+        pattern: "{controller=Home}/{action=RedirectVueJeux}/{id?}");
+
+    endpoints.MapFallbackToController("Index", "Home");
+});
 
 app.MapRazorPages();
 
