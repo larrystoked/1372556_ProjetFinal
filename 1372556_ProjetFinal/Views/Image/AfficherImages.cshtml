@@ -1,0 +1,13 @@
+﻿
+@model List<_1372556_ProjetFinal.Models.Image>
+
+<h2>Afficher les Images</h2>
+
+<div class="row">
+    @foreach (var image in Model)
+    {
+        <div class="col-md-3">
+            <img src="@Url.Action("AfficherImage", "Image", new { id = image.Id })" alt="Image" class="img-thumbnail">
+        </div>
+    }
+</div>

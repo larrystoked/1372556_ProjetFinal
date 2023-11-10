@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using _1372556_ProjetFinal.Models;
-using _1372556_ProjetFinal.ViewModels;
 
 namespace _1372556_ProjetFinal.Data
 {
@@ -21,6 +20,7 @@ namespace _1372556_ProjetFinal.Data
         public virtual DbSet<Changelog> Changelogs { get; set; } = null!;
         public virtual DbSet<Dresseur> Dresseurs { get; set; } = null!;
         public virtual DbSet<Generation> Generations { get; set; } = null!;
+        public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<Jeux> Jeuxes { get; set; } = null!;
         public virtual DbSet<Pokemon> Pokemons { get; set; } = null!;
         public virtual DbSet<Typee> Typees { get; set; } = null!;
@@ -33,6 +33,7 @@ namespace _1372556_ProjetFinal.Data
                 .FromSqlInterpolated($"EXEC dbo.GetPokemonDetailsByGeneration {generationId}")
                 .ToListAsync();
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -52,19 +53,24 @@ namespace _1372556_ProjetFinal.Data
             modelBuilder.Entity<Dresseur>(entity =>
             {
                 entity.HasKey(e => e.IdDresseur)
-                    .HasName("PK__Dresseur__A18A2587B391153F");
+                    .HasName("PK__Dresseur__A18A2587980F19EE");
             });
 
             modelBuilder.Entity<Generation>(entity =>
             {
                 entity.HasKey(e => e.IdGeneration)
-                    .HasName("PK__Generati__B9B517B545F6F3AA");
+                    .HasName("PK__Generati__B9B517B5516370F5");
+            });
+
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.Property(e => e.Identifiant).HasDefaultValueSql("(newid())");
             });
 
             modelBuilder.Entity<Jeux>(entity =>
             {
                 entity.HasKey(e => e.IdJeux)
-                    .HasName("PK__Jeux__1087CF5651129398");
+                    .HasName("PK__Jeux__1087CF568315B688");
 
                 entity.HasOne(d => d.IdGenerationNavigation)
                     .WithMany(p => p.Jeuxes)
@@ -75,7 +81,7 @@ namespace _1372556_ProjetFinal.Data
             modelBuilder.Entity<Pokemon>(entity =>
             {
                 entity.HasKey(e => e.IdPokemon)
-                    .HasName("PK__Pokemon__653EBD859FBC7C17");
+                    .HasName("PK__Pokemon__653EBD853C86A24B");
 
                 entity.HasOne(d => d.IdGenerationNavigation)
                     .WithMany(p => p.Pokemons)
@@ -91,7 +97,7 @@ namespace _1372556_ProjetFinal.Data
             modelBuilder.Entity<Typee>(entity =>
             {
                 entity.HasKey(e => e.IdTypes)
-                    .HasName("PK__Typee__1DC79F8242D6BB18");
+                    .HasName("PK__Typee__1DC79F821BE7076A");
             });
 
             modelBuilder.Entity<VueJeux>(entity =>

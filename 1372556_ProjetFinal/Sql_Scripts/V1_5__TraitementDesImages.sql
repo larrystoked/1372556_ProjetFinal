@@ -1,0 +1,19 @@
+﻿CREATE TABLE Image
+    (
+        Id INT PRIMARY KEY IDENTITY,
+        Identifiant UNIQUEIDENTIFIER ROWGUIDCOL NOT NULL,
+        
+    );
+GO
+
+ALTER TABLE Image ADD CONSTRAINT UC_Image_Identifiant
+UNIQUE (Identifiant);
+GO
+
+ALTER TABLE Image ADD CONSTRAINT DF_Image_Identifiant
+DEFAULT newid() FOR Identifiant;
+GO
+
+ALTER TABLE Image ADD
+FichierImage VARBINARY(MAX) FILESTREAM NULL;
+GO

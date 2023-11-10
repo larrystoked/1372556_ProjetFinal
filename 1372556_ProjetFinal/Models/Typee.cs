@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace _1372556_ProjetFinal.Models
 {
     [Table("Typee")]
-    [Index("NomTypes", Name = "UQ__Typee__47448AB74058B709", IsUnique = true)]
+    [Index("NomTypes", Name = "UQ__Typee__47448AB7EEE11379", IsUnique = true)]
     public partial class Typee
     {
         public Typee()

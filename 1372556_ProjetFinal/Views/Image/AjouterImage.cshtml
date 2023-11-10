@@ -1,0 +1,18 @@
+﻿@model _1372556_ProjetFinal.ViewModels.ImageUploadViewModel
+
+<h2>Ajouter une Image</h2>
+
+<form asp-controller="Image" asp-action="AjouterImage" method="post" enctype="multipart/form-data" id="ajouterImageForm">
+    <div class="form-group">
+        <label for="formFile">Sélectionnez un fichier image :</label>
+        <input type="file" class="form-control" id="formFile" name="FormFile" accept=".jpg, .jpeg, .png" required>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="ajouterImage()">Ajouter l'image</button>
+</form>
+
+<script>
+    function ajouterImage() {
+        // Soumettre le formulaire lorsqu'on clique sur le bouton
+        document.getElementById("ajouterImageForm").submit();
+    }
+</script>
