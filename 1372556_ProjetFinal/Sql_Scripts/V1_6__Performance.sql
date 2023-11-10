@@ -1,0 +1,7 @@
+﻿CREATE NONCLUSTERED INDEX IX_Pokemon_Nom
+ON Pokemon (Nom);
+GO
+
+CREATE NONCLUSTERED INDEX IX_Pokemon_Niveau
+ON Pokemon (Niveau);
+GO
