@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5NReLMYDAXCHG79TEXJRtQRtdvikxBprR1CCG3Ef93E=",
+  "Hash": "LMWZmXs5qdeHqNOXyeX0yIzZXn9fErTpk6CAVnElFcI=",
   "Source": "1372556_ProjetFinal",
   "BasePath": "_content/1372556_ProjetFinal",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\1372556\\Desktop\\1372556_ProjetFinal\\1372556_ProjetFinal\\wwwroot\\images\\pokeball.png",
+      "SourceId": "1372556_ProjetFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1372556\\Desktop\\1372556_ProjetFinal\\1372556_ProjetFinal\\wwwroot\\",
+      "BasePath": "_content/1372556_ProjetFinal",
+      "RelativePath": "images/pokeball.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pokeball.png"
     },
     {
       "Identity": "C:\\Users\\1372556\\Desktop\\1372556_ProjetFinal\\1372556_ProjetFinal\\wwwroot\\js\\site.js",

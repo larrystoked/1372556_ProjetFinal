@@ -1,0 +1,17 @@
+
+evolve migrate sqlserver -c "Server=.\SQLEXPRESS;Initial Catalog=TP1_Pokemon;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False" --target-version 1.5
+
+
+dotnet ef dbcontext scaffold Name=BDPokemon Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir Data --data-annotations --force
+
+
+*** À AJOUTER AU CONTEXT ***
+
+    public virtual DbSet<PokemonDetailsResult> PokemonDetailsResult { get; set; }
+
+    public virtual async Task<List<PokemonDetailsResult>> GetPokemonDetailsByGenerationAsync(int generationId)
+    {
+        return await PokemonDetailsResult
+            .FromSqlInterpolated($"EXEC dbo.GetPokemonDetailsByGeneration {generationId}")
+            .ToListAsync();
+    }
